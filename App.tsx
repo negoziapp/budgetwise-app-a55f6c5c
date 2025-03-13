@@ -17,6 +17,10 @@ import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import WhatsappAuth from "./pages/WhatsappAuth";
 import Index from "./pages/Index";
+import Clients from "./pages/Clients";
+import Calendar from "./pages/Calendar";
+import Payments from "./pages/Payments";
+import Reports from "./pages/Reports";
 import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider } from "next-themes";
 
@@ -40,6 +44,10 @@ const App = () => (
                   <Route path="invoices" element={<Invoices />} />
                   <Route path="quotes" element={<Quotes />} />
                   <Route path="expenses" element={<Expenses />} />
+                  <Route path="clients" element={<Clients />} />
+                  <Route path="payments" element={<Payments />} />
+                  <Route path="reports" element={<Reports />} />
+                  <Route path="calendar" element={<Calendar />} />
                   <Route path="referrals" element={<Referrals />} />
                   <Route path="settings" element={<Settings />} />
                   <Route path="whatsapp-auth" element={<WhatsappAuth />} />

@@ -10,7 +10,6 @@ import {
   SidebarMenuButton,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
 } from "@/components/ui/sidebar";
 import { useAuth } from "@/context/AuthContext";
 import { 
@@ -21,7 +20,14 @@ import {
   Users, 
   Settings, 
   LogOut,
-  MessageCircle
+  MessageCircle,
+  CreditCard,
+  Home,
+  LineChart,
+  FileBarChart,
+  Wallet,
+  BellRing,
+  CalendarDays
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -30,12 +36,19 @@ export function Sidebar() {
 
   const menuItems = [
     { title: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
+    { title: "Clientes", path: "/dashboard/clients", icon: Users },
     { title: "Facturas", path: "/dashboard/invoices", icon: FileText },
     { title: "Presupuestos", path: "/dashboard/quotes", icon: FilePlus2 },
     { title: "Gastos", path: "/dashboard/expenses", icon: Receipt },
+    { title: "Pagos", path: "/dashboard/payments", icon: CreditCard },
+    { title: "Informes", path: "/dashboard/reports", icon: FileBarChart },
+    { title: "Calendario", path: "/dashboard/calendar", icon: CalendarDays },
+    { title: "Whatsapp", path: "/dashboard/whatsapp-auth", icon: MessageCircle },
+  ];
+
+  const secondaryItems = [
     { title: "Referidos", path: "/dashboard/referrals", icon: Users },
-    { title: "WhatsApp", path: "/dashboard/whatsapp-auth", icon: MessageCircle },
-    { title: "Configuración", path: "/dashboard/settings", icon: Settings },
+    { title: "Configuración", path: "/dashboard/settings", icon: Settings }
   ];
 
   return (
@@ -51,6 +64,31 @@ export function Sidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => (
+                <SidebarMenuItem key={item.path}>
+                  <SidebarMenuButton asChild>
+                    <NavLink 
+                      to={item.path}
+                      className={({ isActive }) => 
+                        isActive ? "text-primary font-medium" : ""
+                      }
+                    >
+                      <item.icon size={20} />
+                      <span>{item.title}</span>
+                    </NavLink>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup className="mt-4">
+          <SidebarGroupContent>
+            <div className="px-3 mb-2 text-xs font-medium text-muted-foreground">
+              ADMINISTRACIÓN
+            </div>
+            <SidebarMenu>
+              {secondaryItems.map((item) => (
                 <SidebarMenuItem key={item.path}>
                   <SidebarMenuButton asChild>
                     <NavLink 
