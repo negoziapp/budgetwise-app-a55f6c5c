@@ -1,0 +1,154 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 27% 98%;
+    --foreground: 240 10% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+
+    --primary: 262 83% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 240 3.7% 15.9%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 262 83% 67%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 255 100% 100%;
+    --sidebar-foreground: 240 10% 4%;
+    --sidebar-primary: 262 83% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 240, 10% 4%;
+    --sidebar-border: 240 5.9% 90%;
+    --sidebar-ring: 262 83% 67%;
+  }
+
+  .dark {
+    --background: 231 15% 18%;
+    --foreground: 240 10% 98%;
+
+    --card: 229 23% 23%;
+    --card-foreground: 240 10% 98%;
+
+    --popover: 229 23% 23%;
+    --popover-foreground: 240 10% 98%;
+
+    --primary: 262 83% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 235 16% 30%;
+    --secondary-foreground: 240 10% 98%;
+
+    --muted: 235 16% 30%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 235 16% 30%;
+    --accent-foreground: 240 10% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 240 10% 98%;
+
+    --border: 235 16% 30%;
+    --input: 235 16% 30%;
+    --ring: 262 83% 67%;
+
+    --sidebar-background: 231 15% 18%;
+    --sidebar-foreground: 240 10% 98%;
+    --sidebar-primary: 262 83% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 235 16% 30%;
+    --sidebar-accent-foreground: 240 10% 98%;
+    --sidebar-border: 235 16% 30%;
+    --sidebar-ring: 262 83% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-montserrat;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply p-4 rounded-lg border shadow-vuexy-sm bg-card text-card-foreground hover:shadow-vuexy transition-shadow;
+  }
+  
+  .page-container {
+    @apply container mx-auto py-6 px-4 md:px-6;
+  }
+  
+  .page-title {
+    @apply text-2xl md:text-3xl font-bold tracking-tight mb-4;
+  }
+  
+  .section-title {
+    @apply text-xl font-semibold mb-3;
+  }
+
+  /* Vuexy styled components */
+  .vuexy-card {
+    @apply rounded-lg border-0 shadow-vuexy bg-card;
+  }
+
+  .vuexy-card-header {
+    @apply px-5 py-4 border-b flex items-center justify-between;
+  }
+
+  .vuexy-card-body {
+    @apply p-5;
+  }
+
+  .vuexy-badge {
+    @apply text-xs px-2 py-1 rounded-full font-medium;
+  }
+
+  .vuexy-badge-primary {
+    @apply bg-vuexy-primary/10 text-vuexy-primary;
+  }
+  
+  .vuexy-badge-success {
+    @apply bg-vuexy-success/10 text-vuexy-success;
+  }
+  
+  .vuexy-badge-warning {
+    @apply bg-vuexy-warning/10 text-vuexy-warning;
+  }
+  
+  .vuexy-badge-danger {
+    @apply bg-vuexy-danger/10 text-vuexy-danger;
+  }
+  
+  .vuexy-badge-info {
+    @apply bg-vuexy-info/10 text-vuexy-info;
+  }
+}
