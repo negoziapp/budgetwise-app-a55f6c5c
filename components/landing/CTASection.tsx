@@ -1,14 +1,21 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { FileText, Shield, Users } from 'lucide-react';
+import { useInView } from 'framer-motion';
 
 const CTASection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.4 });
+
   return (
     <section id="contact" className="py-16">
       <div className="container mx-auto px-4">
-        <div className="bg-vuexy-primary text-white rounded-2xl p-8 md:p-12 shadow-vuexy-lg max-w-5xl mx-auto">
+        <div 
+          ref={ref}
+          className={`bg-vuexy-primary text-white rounded-2xl p-8 md:p-12 shadow-vuexy-lg max-w-5xl mx-auto transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+        >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Empieza a simplificar tu negocio hoy mismo</h2>
@@ -16,7 +23,7 @@ const CTASection = () => {
                 Únete a miles de empresas que ya gestionan su negocio de manera más eficiente con PYME Simplifica.
               </p>
               <Link to="/register">
-                <Button variant="default" size="lg" className="bg-white text-vuexy-primary hover:bg-white/90">
+                <Button variant="default" size="lg" className="bg-white text-vuexy-primary hover:bg-white/90 hover:scale-105 transition-transform">
                   Prueba gratis 14 días
                 </Button>
               </Link>
