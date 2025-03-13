@@ -1,31 +1,25 @@
 
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 
 const Calendar = () => {
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto py-6">
       <div className="flex justify-between items-center mb-6">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">Calendario</h1>
-          <p className="text-muted-foreground">Organiza todas tus actividades</p>
-        </div>
-        <Button className="flex gap-2 items-center">
-          <PlusIcon size={18} />
+        <h1 className="text-2xl font-bold">Calendario</h1>
+        <Button variant="default" className="flex items-center gap-2">
+          <PlusIcon size={16} />
           <span>Nuevo Evento</span>
         </Button>
       </div>
       
-      <Card>
-        <CardHeader>
-          <CardTitle>Calendario</CardTitle>
-          <CardDescription>Programa y visualiza tus eventos y tareas</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="text-center p-8 text-muted-foreground">
-            Esta sección está en desarrollo. ¡Pronto podrás ver tu calendario completo aquí!
+      <Card className="border-none shadow-none bg-background">
+        <CardContent className="p-0">
+          <div className="text-center py-16">
+            <p className="text-muted-foreground mb-2">No hay eventos disponibles.</p>
+            <p className="text-muted-foreground text-sm">Crea un nuevo evento haciendo clic en el botón superior.</p>
           </div>
         </CardContent>
       </Card>
