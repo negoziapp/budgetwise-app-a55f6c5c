@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import AppLayout from "./layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
@@ -16,7 +16,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import WhatsappAuth from "./pages/WhatsappAuth";
-import LandingPage from "./pages/LandingPage";
+import Index from "./pages/Index";
 import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider } from "next-themes";
 
@@ -32,7 +32,7 @@ const App = () => (
           <BrowserRouter>
             <SidebarProvider>
               <Routes>
-                <Route path="/" element={<LandingPage />} />
+                <Route path="/" element={<Index />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/dashboard" element={<AppLayout />}>
